@@ -10,3 +10,5 @@ import AnyComponent from "./component/home.jsx";
 
 //render your react application
 ReactDOM.render(<AnyComponent />, document.querySelector("#app"));
+
+

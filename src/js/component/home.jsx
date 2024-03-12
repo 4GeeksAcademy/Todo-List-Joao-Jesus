@@ -30,26 +30,29 @@ const AnyComponent = () => {
         updatedTasks.splice(index, 1);
         setTasks(updatedTasks);
     };
-		 
-		return <div className="container d-flex">
+		 // returning the component 
+		return <div className="container mt-3 text-center">
+            
 			<input type="text" 
 			onChange={e => setInputValue(e.target.value)}  
 			onKeyPress={handleKeyEnter} 
-			placeholder="Enter a new task" 
+			placeholder="What needs to be done" 
 			value={inputValue} />
-			<button onClick={addTask}>Add a task</button>
+		    
 			
 			{tasks.length === 0 ? (
-                <p>No tasks, add a task</p>
+                
+                <i className="fa fa-skull" onClick={() => addTask(index)}></i>
             ) : (
-                <ul>
+                <div className="TaskRemover text-center mt-3">
                     {tasks.map((task, index) => (
-                        <li key={index}>
+                        <div className="ListTasks d-flex text-center" key={index}>
                             <p>{task}</p>
-                            <button onClick={() => removeTask(index)}>Remove task</button>
-                        </li>
+                    
+                            <i className="fa fa-skull" onClick={() => removeTask(index)}></i>
+                        </div>
                     ))}
-                </ul>
+                </div>
             )}
         </div>
     
