@@ -39,7 +39,8 @@ const AnyComponent = () => {
             type="text" 
 			onChange={e => setInputValue(e.target.value)}  
 			onKeyPress={handleKeyEnter} 
-			placeholder="What needs to be done" 
+			placeholder="What needs to be done"
+            maxLength={100} 
 			value={inputValue} />
             </nav>
 		   
