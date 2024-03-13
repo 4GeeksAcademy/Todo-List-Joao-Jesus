@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-
-
 //create your first component
 
 const AnyComponent = () => {
@@ -31,29 +29,29 @@ const AnyComponent = () => {
         setTasks(updatedTasks);
     };
 		 // returning the component 
-		return <div className="container mt-3 text-center">
-            
-			<input type="text" 
+		return <div className="container mt-3">
+           <nav className="navbar navbar-light bg-light text-center">
+            <input className="Tasker"
+            type="text" 
 			onChange={e => setInputValue(e.target.value)}  
 			onKeyPress={handleKeyEnter} 
 			placeholder="What needs to be done" 
 			value={inputValue} />
-		    
-			
-			{tasks.length === 0 ? (
-                
-                <i className="fa fa-skull" onClick={() => addTask(index)}></i>
-            ) : (
-                <div className="TaskRemover text-center mt-3">
+            </nav>
+		   
+			{tasks.length === 0 ? (<button type="button" 
+            className="AddAtask btn btn-warning"  
+            onClick={() => addTask(index)}>Add a task</button>) : (
+             <div className="TaskRemover mt-3">
                     {tasks.map((task, index) => (
-                        <div className="ListTasks d-flex text-center" key={index}>
-                            <p>{task}</p>
-                    
-                            <i className="fa fa-skull" onClick={() => removeTask(index)}></i>
-                        </div>
+                        <div className="ListTasks d-flex container" key={index}>
+                            <nav className="navbar navbar-light bg-light text-center">
+                            <p className="Newtasks mb-0 text-center">{task}</p>
+                            <span className="m-2"><i className="fa-solid fa-xmark m-2" onClick={() => removeTask(index)}></i></span>  
+                       </nav> </div>
                     ))}
                 </div>
-            )}
+          )}  
         </div>
     
 	}
@@ -61,3 +59,6 @@ const AnyComponent = () => {
 
 
 export default AnyComponent;
+// 
+//             
+//   
