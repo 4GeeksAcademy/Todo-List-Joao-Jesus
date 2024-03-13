@@ -40,7 +40,7 @@ const AnyComponent = () => {
 			onChange={e => setInputValue(e.target.value)}  
 			onKeyPress={handleKeyEnter} 
 			placeholder="What needs to be done"
-            maxLength={100} 
+            maxLength={80} 
 			value={inputValue} />
             </nav>
 		   
