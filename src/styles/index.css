@@ -7,10 +7,10 @@ span {
 
 
 
-.fa-xmark {
+.fa-ban {
     display: none;
 }
 
-.ListTasks:hover .fa-xmark {
+.ListTasks:hover .fa-ban {
     display: inline-block;
 }

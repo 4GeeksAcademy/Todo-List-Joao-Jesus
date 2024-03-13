@@ -33,6 +33,7 @@ const AnyComponent = () => {
     };
 		 // returning the component 
 		return <div className="container mt-3">
+            <h5 className="Title text-center mt-5 mb-2 p-3">Todos List</h5>
            <nav className="navbar navbar-light bg-light">
             <input className="Tasker container"
             type="text" 
@@ -43,24 +44,24 @@ const AnyComponent = () => {
             </nav>
 		   
 			{tasks.length === 0 ? (<button type="button" 
-            className="AddAtask btn btn-danger"  
-            onClick={() => addTask(index)}>No task? Please add your tasks and press Enter</button>) : (
-             <div className="TaskRemover mt-3">
+            className="AddAtask btn btn-danger text-center">
+                No task? Please add your tasks and press Enter</button>) : (
+             <div className="TaskRemover mt-2">
                     {tasks.map((task, index) => (
                         <div className="ListTasks d-flex container p-0" key={index}>
-                            <nav className="navbar navbar-light bg-light container p-2">
-                            <p className="Newtasks mb-0">{task}</p>
-                            <span className="m-2">
-                                
-                                <i className="fa-solid fa-xmark m-2" 
+                            <div className="navbar navbar-light bg-light container p-4">
+                                <p className="Newtasks mb-0">{task}</p>
+                                <span className="spanIcone">
+                                 <i className="fa-solid fa-ban" 
                                 onClick={() => removeTask(index)}>
                                 </i></span>  
-                            </nav> 
+                               
+                            </div> 
                        </div>
                     ))}
                 </div>
           )}
-          <nav className="TasksNum navbar-light bg-light mt-2" >{tasks.length} Tasks left to do</nav>  
+          <div className="TasksNum  bg-light mt-2 p-2" >{tasks.length} Tasks left to do</div>  
         </div>
     
 	}
