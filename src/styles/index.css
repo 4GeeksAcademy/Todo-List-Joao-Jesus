@@ -14,3 +14,7 @@ span {
 .ListTasks:hover .fa-ban {
     display: inline-block;
 }
+
+ul {
+    list-style: none;
+}

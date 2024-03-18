@@ -1,11 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+
+
+//First fetch
+
 
 //create your first component
 
 const AnyComponent = () => {
-		
+
 	const [tasks, setTasks] = useState([]);
     const [inputValue, setInputValue] = useState('');
+    const [ptHolidays, setPtHolidays] = useState([]);
+
+    useEffect (() => {
+        const getData = async () => {
+        const response = await fetch('https://date.nager.at/api/v3/publicholidays/2024/PT');
+        if (response.ok) {
+            const data = await response.json();
+            setPtHolidays(data);
+        } else {
+            console.log('error: ', response.status, response.statusText);
+            /* Handle the error returned by the HTTP request */
+            return {error: {status: response.status, statusText: response.statusText}};
+         }
+    };
+    getData()
+    }, []);
+    
+		
     
 
     // Function to add a new task to todo list
@@ -62,7 +85,12 @@ const AnyComponent = () => {
                     ))}
                 </div>
           )}
-          <div className="TasksNum  bg-light mt-2 p-2" >{tasks.length} Tasks left to do</div>  
+          <div className="TasksNum  bg-light mt-2 p-2" >{tasks.length} Tasks left to do</div> 
+          <div className="Ptholidyas"><h5 className="text-center mt-3 mb-2 p-2">Portugal Public Holidays</h5>
+          <ul className="dateHolidays text-center mt-3 mb-2 p-2"> {ptHolidays.map ((holiday, index) => (
+            <li key={index}><h5>{holiday.name}</h5>{holiday.date}</li>
+          ))}</ul>
+          </div>
         </div>
     
 	}
