@@ -17,4 +17,16 @@ span {
 
 ul {
     list-style: none;
+    padding-left: 0;
+    position: relative;
+}
+
+li{
+    padding: 5px;
+    border: 1px solid rgba(149, 149, 212, 0.425);
+    background-color: rgba(215, 215, 231, 0.425);
+    justify-content: space-evenly;
+    width: 200px;
+    height: 40px;
+
 }

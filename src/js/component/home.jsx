@@ -88,7 +88,7 @@ const AnyComponent = () => {
           <div className="TasksNum  bg-light mt-2 p-2" >{tasks.length} Tasks left to do</div> 
           <div className="Ptholidyas"><h5 className="text-center mt-3 mb-2 p-2">Portugal Public Holidays</h5>
           <ul className="dateHolidays text-center mt-3 mb-2 p-2"> {ptHolidays.map ((holiday, index) => (
-            <li key={index}><h5>{holiday.name}</h5>{holiday.date}</li>
+            <li key={index} className="container d-flex"><h5>{holiday.name}</h5>{holiday.date}</li>
           ))}</ul>
           </div>
         </div>
